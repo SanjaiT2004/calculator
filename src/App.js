@@ -63,12 +63,12 @@ function Calculator(){
   Result: <span style={{ color }}>{result}</span>
 </h4>
       <div>
-        <Button onClick={add} variant="outline-primary" className="ms-3"> Add </Button>
-        <Button onClick={sub} variant="outline-primary" className="ms-3"> Subtract </Button>
-        <Button onClick={multiply} variant="outline-primary" className="ms-3"> Multiplication </Button>
-        <Button onClick={div} variant="outline-primary" className="ms-3"> Division </Button>
-        <Button onClick={resetinput} variant="outline-warning" className="ms-3"> Reset Inputs </Button>
-        <Button onClick={resetresult} variant="outline-danger"  className="ms-3"> Reset Result </Button>
+        <Button onClick={add} variant="outline-primary" className="ms-3 shadow"> Add </Button>
+        <Button onClick={sub} variant="outline-primary" className="ms-3 shadow"> Subtract </Button>
+        <Button onClick={multiply} variant="outline-primary" className="ms-3 shadow"> Multiplication </Button>
+        <Button onClick={div} variant="outline-primary" className="ms-3 shadow"> Division </Button>
+        <Button onClick={resetinput} variant="outline-warning" className="ms-3 shadow"> Reset Inputs </Button>
+        <Button onClick={resetresult} variant="outline-danger"  className="ms-3 shadow"> Reset Result </Button>
       </div>
     </div>
   );
