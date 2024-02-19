@@ -6,7 +6,9 @@ const DivideButton = (props) => {
     const divide = () => {
         if (Number(props.data.num2) === 0) {
             props.data.setColor("Red")
-            props.data.setResult("Give correct Divisor")
+          props.data.setResult("Give correct Divisor")
+          props.data.setNum1(0)
+        props.data.setNum2(0)
         }
         else {
           if (props.data.result === "Give correct Divisor") {
