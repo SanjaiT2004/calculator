@@ -9,26 +9,38 @@ function Calculator(){
   const [color,setColor] = useState("")
   const add = () => {
     setColor("Green")
-    setResult(result => result + Number(num1) + Number(num2))
+    if (result === "Give correct divisor")
+      setResult(Number(num1) + Number(num2))
+    else
+      setResult(result => result + Number(num1) + Number(num2))
+    resetinput()
   }
   const sub = () => {
     setColor("Green")
-    setResult(result => result + Number(num1) - Number(num2))
+    if (result === "Give correct divisor")
+      setResult(Number(num1) - Number(num2))
+    else
+      setResult(result => result + Number(num1) - Number(num2))
+    resetinput()
   }
   const multiply = () => {
     setColor("Green")
+    if (result === "Give correct divisor")
+      setResult(Number(num1) * Number(num2))
     setResult(result => result + Number(num1) * Number(num2))
+    resetinput()
   }
   const div = () => {
-    if (Number(num2) == 0) {
+    if (Number(num2) === 0) {
       setColor("Red")
       setResult("Give correct divisor")  
     }
     else {
       setColor("Green")
-      if (result == "Give correct divisor")
+      if (result === "Give correct divisor")
         setResult(0)
       setResult(result => result + Number(num1) / Number(num2))
+      resetinput()
     }
   }
   const resetinput = () => {
@@ -39,9 +51,9 @@ function Calculator(){
     setResult(0)
   }
   return (
-    <div>
+    <div className="Container-fluid">
       <h1>Simple Calculator for Basic Arithmetic operation</h1>
-      <Container>
+      
       <Form.Control
           type="number"
           value={num1}
@@ -57,7 +69,7 @@ function Calculator(){
           placeholder="Enter number 2"
           onChange={e => setNum2(e.target.value)}
         />
-        </Container>
+       
     
       <h4>
   Result: <span style={{ color }}>{result}</span>
@@ -69,7 +81,7 @@ function Calculator(){
         <Button onClick={div} variant="outline-primary" className="ms-3 shadow"> Division </Button>
         <Button onClick={resetinput} variant="outline-warning" className="ms-3 shadow"> Reset Inputs </Button>
         <Button onClick={resetresult} variant="outline-danger"  className="ms-3 shadow"> Reset Result </Button>
-      </div>
+        </div>
     </div>
   );
 }
